@@ -2,15 +2,9 @@
     <div>
         <sui-list>
             <sui-list-item v-for="card in data" :key="card.id">
-                <card
-                        :id="card.id"
-                        :title="card.data.title"
-                        :content="card.data.content"
-                        :action="card.data.action"
-                        :date="card.data.date"
-                        :imgProfile="card.data.imgProfile"
-                        @loadNewData="loadNewData"
-                />
+                <card :data="card"
+                      :id="card.id"
+                      :date="card.data.date"/>
             </sui-list-item>
         </sui-list>
     </div>
@@ -24,11 +18,7 @@
         props: {
             data: Array
         },
-        methods: {
-            loadNewData: function () {
-                this.$emit('loadNewData')
-            }
-        },
+        methods: {},
         components: {
             card
         }

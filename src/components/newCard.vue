@@ -6,7 +6,7 @@
                 @click="showNewCardForm(true)"
         />
         <div id="newCardForm" v-if="newCardFormVisibility">
-            <new-card-form @hideForm="showNewCardForm" @loadNewData="loadNewData"/>
+            <new-card-form @hideForm="showNewCardForm"/>
         </div>
     </div>
 </template>

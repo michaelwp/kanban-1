@@ -4,21 +4,21 @@
             <sui-card class="card">
                 <sui-card-content>
                     <sui-image
-                            :src="imgProfile"
+                            :src="data.data.imgProfile"
                             class="right floated imgProfile"
                     />
-                    <sui-card-header>{{ title }}</sui-card-header>
+                    <sui-card-header>{{ data.data.title }}</sui-card-header>
                     <sui-card-meta>{{ formatDate }}</sui-card-meta>
                 </sui-card-content>
                 <sui-card-content>
                     <sui-card-description>
-                        {{ content }}
+                        {{ data.data.content }}
                     </sui-card-description>
                 </sui-card-content>
                 <sui-card-content extra>
                     <sui-container text-align="center">
                         <sui-button-group>
-                            <sui-button basic positive @click="updateData" v-if="isAction">{{ action }}</sui-button>
+                            <sui-button basic positive @click="updateData" v-if="isAction">{{ data.data.action }}</sui-button>
                             <sui-button basic negative @click="deleteData">Dismiss</sui-button>
                         </sui-button-group>
                     </sui-container>
@@ -39,12 +39,9 @@
             }
         },
         props: {
+            data: Object,
             id: String,
-            title: String,
-            content: String,
-            action: String,
             date: Object,
-            imgProfile: String
         },
         methods: {
             updateData: function () {
