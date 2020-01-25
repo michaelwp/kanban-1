@@ -42,6 +42,7 @@
                     })
                     .then(() => {
                         console.log("Document successfully written!");
+                        this.$emit('loadNewData')
                         this.hideForm()
                     })
                     .catch(function (error) {

@@ -25,7 +25,11 @@
         methods: {
             showNewCardForm: function (state) {
                 this.newCardFormVisibility = state
+            },
+            loadNewData: function () {
+                this.$emit('loadNewData')
             }
+
         },
         components: {
             newCardForm

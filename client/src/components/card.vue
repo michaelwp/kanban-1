@@ -67,6 +67,7 @@
                     })
                     .then(() => {
                         console.log("Document successfully updated!");
+                        this.$emit('loadNewData')
                     })
                     .catch(function (error) {
                         console.error("Error writing document: ", error);
@@ -78,6 +79,7 @@
                     .delete()
                     .then(() => {
                         console.log("Document successfully deleted!");
+                        this.$emit('loadNewData')
                     })
                     .catch(function (error) {
                         console.error("Error deleting document: ", error);
