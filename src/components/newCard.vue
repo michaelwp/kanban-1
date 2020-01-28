@@ -6,7 +6,7 @@
                 @click="showNewCardForm(true)"
         />
         <div id="newCardForm" v-if="newCardFormVisibility">
-            <new-card-form @hideForm="showNewCardForm"/>
+            <new-card-form @hideForm="showNewCardForm" @loadNewData="loadNewData"/>
         </div>
     </div>
 </template>
@@ -25,11 +25,7 @@
         methods: {
             showNewCardForm: function (state) {
                 this.newCardFormVisibility = state
-            },
-            loadNewData: function () {
-                this.$emit('loadNewData')
             }
-
         },
         components: {
             newCardForm

@@ -1,8 +1,5 @@
 # client
 
-## URL
-https://kanban-8fed6.firebaseapp.com/
-
 ## Project setup
 ```
 npm install

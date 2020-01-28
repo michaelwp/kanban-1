@@ -22,7 +22,7 @@
                         <sui-card-content class="right floated">{{ inProgress.length}} Cards</sui-card-content>
                     </sui-card-content>
                     <sui-card-content id="card-inprogress-body">
-                        <card-container :data="inProgress"/>
+                        <card-container :data="inProgress" />
                     </sui-card-content>
                 </sui-card>
             </sui-grid-column>
@@ -33,7 +33,7 @@
                         <sui-card-content class="right floated">{{ ready.length}} Cards</sui-card-content>
                     </sui-card-content>
                     <sui-card-content id="card-ready-body">
-                        <card-container :data="ready"/>
+                        <card-container :data="ready" />
                     </sui-card-content>
                 </sui-card>
             </sui-grid-column>
@@ -44,7 +44,7 @@
                         <sui-card-content class="right floated">{{ completed.length}} Cards</sui-card-content>
                     </sui-card-content>
                     <sui-card-content id="card-closed-body">
-                        <card-container :data="completed"/>
+                        <card-container :data="completed" />
                     </sui-card-content>
                 </sui-card>
             </sui-grid-column>

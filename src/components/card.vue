@@ -4,21 +4,21 @@
             <sui-card class="card">
                 <sui-card-content>
                     <sui-image
-                            :src="data.data.imgProfile"
+                            :src="imgProfile"
                             class="right floated imgProfile"
                     />
-                    <sui-card-header>{{ data.data.title }}</sui-card-header>
+                    <sui-card-header>{{ title }}</sui-card-header>
                     <sui-card-meta>{{ formatDate }}</sui-card-meta>
                 </sui-card-content>
                 <sui-card-content>
                     <sui-card-description>
-                        {{ data.data.content }}
+                        {{ content }}
                     </sui-card-description>
                 </sui-card-content>
                 <sui-card-content extra>
                     <sui-container text-align="center">
                         <sui-button-group>
-                            <sui-button basic positive @click="updateData" v-if="isAction">{{ data.data.action }}</sui-button>
+                            <sui-button basic positive @click="updateData" v-if="isAction">{{ action }}</sui-button>
                             <sui-button basic negative @click="deleteData">Dismiss</sui-button>
                         </sui-button-group>
                     </sui-container>
@@ -39,9 +39,12 @@
             }
         },
         props: {
-            data: Object,
             id: String,
+            title: String,
+            content: String,
+            action: String,
             date: Object,
+            imgProfile: String
         },
         methods: {
             updateData: function () {
@@ -64,7 +67,6 @@
                     })
                     .then(() => {
                         console.log("Document successfully updated!");
-                        this.$emit('loadNewData')
                     })
                     .catch(function (error) {
                         console.error("Error writing document: ", error);
@@ -76,7 +78,6 @@
                     .delete()
                     .then(() => {
                         console.log("Document successfully deleted!");
-                        this.$emit('loadNewData')
                     })
                     .catch(function (error) {
                         console.error("Error deleting document: ", error);

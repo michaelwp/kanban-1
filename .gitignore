@@ -20,7 +20,7 @@ yarn-error.log*
 *.sln
 *.sw?
 
+#firebase
+firebase.json
 .firebaserc
 .firebase
-firebase.json
-firebase-debug.log
